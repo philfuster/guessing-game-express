@@ -123,5 +123,7 @@ dist/
 tmp/
 temp/
 
+# ignore Launch file
+.vscode
 # End of https://www.gitignore.io/api/linux,node
 n
