@@ -1,0 +1,9 @@
+@import url('main.css');
+* {
+  box-sizing: border-box;
+}
+.content {
+  background-color: white;
+  color: black;
+  font-size: 1.75rem;
+}

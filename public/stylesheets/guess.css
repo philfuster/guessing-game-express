@@ -1,30 +1,35 @@
-@import url("main.css");
-#start_page {
-	display:flex;
-	flex-direction: column;
-	padding: 3rem;
-	justify-content: center;
+@import url('main.css');
+#start {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem;
+  width: 100%;
 }
 
 .input {
-	display:flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .instructions {
-	background-color:#FFFFB8;
-	border-color:	#E6B800;
-	width:250px;
-	border-width: 2px;
-	border-radius: 13px;
-	padding: 2rem;
+  background-color: rgb(255, 255, 255);
+  border-color: #e6b800;
+  width: 250px;
+  border-width: 2px;
+  border-radius: 13px;
+  padding: 2rem;
+  color: black;
+  align-self: flex-start;
 }
-
+form {
+  align-self: center;
+  justify-self: center;
+}
 .highGuess {
-	background-color:#A64D4D;
-	border-color:	#8D1919;
+  background-color: #a64d4d;
+  border-color: #8d1919;
 }
 .lowGuess {
-	background-color:#8099E6;
-	border-color:	#335CD6;
+  background-color: #8099e6;
+  border-color: #335cd6;
 }

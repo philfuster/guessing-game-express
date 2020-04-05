@@ -2,16 +2,18 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
   </head>
   <body>
-    <div class="content">
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-      <p>
+    <div class="bg"></div>
+    <div class="content bg-text">
+      <h1>Welcome to <%= title %></h1>
+      <p class="text-area">
         This iteration of Guessing Game focuses on the Express framework.
         <br />
-        On top of that, serialization will be implemented as well!
+        While using express, new features like serialization will be added.
+        <br />
+        This version of the Guessing Game will feature a new UI still using EJS.
         <br />
         Thank you for checking out my project!
         <br />
@@ -21,7 +23,7 @@
         <br />
         Philip
       </p>
-      <a href="/start">Ready to begin?</a>
+      <a class="nav-link" href="/start">Ready to begin?</a>
     </div>
   </body>
 </html>

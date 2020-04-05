@@ -11,9 +11,22 @@
     <script src="guess_form.js"></script>
   </head>
   <body>
-    <div class="content">
+    <div class="bg"></div>
+    <div class="content bg-text">
       <h1><%= title %></h1>
-      <h1>We Startin baby we Startin</h1>
+      <section id="start">
+        <h2 class="instructions">
+          The server is thinking of a number between 1 and 10.
+        </h2>
+        <form>
+          <label for="guess">Your guess</label>
+          <div class="input">
+            <input type="text" name="guess" />
+            <button id="guess_input" type="button">Guess</button>
+          </div>
+        </form>
+        <ul></ul>
+      </section>
     </div>
   </body>
 </html>

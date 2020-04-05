@@ -1,9 +1,16 @@
-body {
+body,
+html {
   margin: 0;
   line-height: 1.6;
   letter-spacing: -0.00278rem;
   font-size: 1rem;
   font-family: Arial, x-locale-body, sans-serif;
+  height: 100%;
+}
+
+.title {
+  color: white;
+  font-size: 5rem;
 }
 
 .content {
@@ -14,12 +21,46 @@ body {
   align-items: center;
 }
 
+.bg {
+  /* The image used */
+  background-image: url('../images/OGA3FX0.jpg');
+
+  /* Add blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
 form {
   padding: 1rem;
 }
 label {
   font-weight: 800;
   display: block;
+  justify-self: flex-start;
 }
 
 .nav-link,
