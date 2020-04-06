@@ -8,7 +8,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="guess_form.js"></script>
+    <script src="/javascripts/guess_form.js"></script>
   </head>
   <body>
     <div class="bg"></div>
@@ -18,9 +18,9 @@
         <h2 class="instructions">
           The server is thinking of a number between 1 and 10.
         </h2>
-        <form>
-          <label for="guess">Your guess</label>
+        <form id="guess-form">
           <div class="input">
+            <label for="guess">Your guess</label>
             <input type="text" name="guess" />
             <button id="guess_input" type="button">Guess</button>
           </div>

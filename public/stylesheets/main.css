@@ -14,7 +14,7 @@ html {
 }
 
 .content {
-  max-width: 1264px;
+  width: max-content;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -45,11 +45,11 @@ html {
   font-weight: bold;
   border: 3px solid #f1f1f1;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  width: 80%;
+  width: 60%;
   padding: 20px;
   text-align: center;
 }
@@ -60,7 +60,7 @@ form {
 label {
   font-weight: 800;
   display: block;
-  justify-self: flex-start;
+  font-size: 2rem;
 }
 
 .nav-link,
@@ -74,7 +74,8 @@ button {
   color: palevioletred;
   text-decoration: none;
 }
-button {
+button,
+input {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
 }
