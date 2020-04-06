@@ -8,9 +8,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const debug = require('debug');
-var dateformat = require('dateformat');
 // Mongo Client
-const { MongoClient, ObjectID } = require('mongodb');
+const { MongoClient } = require('mongodb');
 const assert = require('assert');
 /*
   === Initialize Variables ===
