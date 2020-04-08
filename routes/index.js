@@ -13,6 +13,7 @@ const { ObjectID } = require('mongodb');
 /*
   === Function Defitions ===
 */
+
 /**
  * Initialize Guessing Game.
  * @param {Request} req - Request object
@@ -47,31 +48,54 @@ function handleGuess(req, res) {
   log('Guess being Handled...');
   const { guess } = req.body;
   const { secretNumber } = req.session;
-  const success = guess === secretNumber;
+  const success = parseInt(guess, 10) === secretNumber;
   const high = guess > secretNumber;
   const low = guess < secretNumber;
   log(`Guess submitted: ${guess}`);
   log(`${secretNumber} <> ${guess}`);
-
+  const model = {};
+  model.title = 'Guessing Game';
   if (success) {
     res.end(JSON.stringify({ result: 'success' }));
-  } else if (high) {
-    res.end(JSON.stringify({ result: 'high' }));
+  }
+  if (high) {
+    model.result = 'too high';
+    model.class = 'highGuess';
   } else if (low) {
-    res.end(JSON.stringify({ result: 'low' }));
+    model.result = 'too low';
+    model.class = 'lowGuess';
+  }
+  model.guess = guess;
+  // New Game. Create DB record.
+  if (req.session.newGame) {
+    req.session.newGame = false;
+    res.render('guessForm', model);
+  } else {
+    res.end(JSON.stringify({ result: model.result }));
   }
 }
 
-/* GET home page. */
+/**
+ * Handle Success
+ */
+function handleSuccess(req, res) {
+  res.render('success', JSON.stringify({ title: 'fucking sucess yesss' }));
+}
+
+/*
+  === Routes ===
+*/
+/* GET index page. */
 router.get('/', function (req, res) {
   log('Serving this shit up boi');
   res.render('index', { title: 'Guessing Game w/ Express' });
 });
 
 /* GET start page. */
-// eslint-disable-next-line no-unused-vars
 router.get('/start', handleStart);
 
 router.post('/guess', handleGuess);
+
+router.get('/success', handleSuccess);
 
 module.exports = router;

@@ -12,7 +12,7 @@ const debug = require('debug');
 const { MongoClient } = require('mongodb');
 const assert = require('assert');
 /*
-  === Initialize Variables ===
+  === Local Variables ===
 */
 // Express Session Option Object
 const sess = {
@@ -61,7 +61,6 @@ const app = express();
     log('Connected to MongoDB Atlas correctly');
     db = client.db(dbName);
     gamesCol = db.collection('games');
-
     log('PAF Guessing Game Application started...');
     // view engine setup
     app.set('views', path.join(__dirname, '/views'));
