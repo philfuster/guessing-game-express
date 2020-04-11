@@ -5,25 +5,23 @@
     <link rel="stylesheet" href="/stylesheets/index.css" />
   </head>
   <body>
-    <div class="bg"></div>
-    <div class="content bg-text">
-      <h1>Welcome to <%= title %></h1>
-      <p class="text-area">
-        This iteration of Guessing Game focuses on the Express framework.
-        <br />
-        While using express, new features like serialization will be added.
-        <br />
-        This version of the Guessing Game will feature a new UI still using EJS.
-        <br />
-        Thank you for checking out my project!
-        <br />
-        If you have critiques please let me know!
-        <br />
-        Cheers,
-        <br />
-        Philip
-      </p>
-      <a class="nav-link" href="/start">Ready to begin?</a>
+    <div class="container">
+      <main class="content">
+        <h1 class="title">Welcome to <%= title %></h1>
+        <p class="text-area">
+          This iteration of Guessing Game focuses on the Express framework.
+          Specifically focusing on routing. Another focus is responsive design
+          with CSS Thank you for checking out my project! If you have critiques
+          please let me know!
+          <br />
+          Cheers,
+          <br />
+          Philip
+        </p>
+        <nav>
+          <a class="nav-link" href="/start">Ready to begin?</a>
+        </nav>
+      </main>
     </div>
   </body>
 </html>

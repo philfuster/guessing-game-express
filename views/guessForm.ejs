@@ -11,29 +11,30 @@
     <script src="/javascripts/guessForm.js"></script>
   </head>
   <body>
-    <div class="bg"></div>
-    <div class="content bg-text">
-      <h1><%= title %></h1>
-      <section id="guess">
-        <h2 class="instructions hidden">
-          The server is thinking of a number between 1 and 10.
-        </h2>
-        <a class="nav-link" id="showInstructions" href="#">Instructions</a>
-        <form id="guess-form">
-          <div class="input">
-            <label for="guess">Your guess</label>
-            <input type="text" name="guess" required />
-            <button id="guess_input" type="button">Guess</button>
-          </div>
-        </form>
-      </section>
-      <ul>
-        <% if(result == 'too high') {%>
-        <li class="highGuess"><%= guess%> <%= result%></li>
-        <%} else{%>
-        <li class="lowGuess"><%= guess%> <%= result%></li>
-        <%}%>
-      </ul>
+    <div class="container">
+      <main class="content">
+        <h1><%= title %></h1>
+        <section id="guess">
+          <h2 class="instructions hidden">
+            The server is thinking of a number between 1 and 10.
+          </h2>
+          <a class="nav-link" id="showInstructions" href="#">Instructions</a>
+          <form id="guess-form">
+            <div class="input">
+              <label for="guess">Your guess</label>
+              <input type="text" name="guess" required />
+              <button id="guess_input" type="button">Guess</button>
+            </div>
+          </form>
+        </section>
+        <ul>
+          <% if(result == 'too high') {%>
+          <li class="highGuess"><%= guess%> <%= result%></li>
+          <%} else{%>
+          <li class="lowGuess"><%= guess%> <%= result%></li>
+          <%}%>
+        </ul>
+      </main>
     </div>
   </body>
 </html>

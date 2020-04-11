@@ -22,8 +22,6 @@ $(document).ready(function () {
       });
       const result = await response.json();
       const li = $('<li/>');
-      console.table(result);
-      // if (result.result === 'success') {
       if (result.result === 'success') {
         window.location.replace('/success');
       } else if (result.result === 'too high') {

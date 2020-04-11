@@ -73,6 +73,7 @@ const app = express();
     app.use(express.static(path.join(__dirname, '/routes')));
     app.use(session(sess));
 
+    // Set Routers
     app.use('/', indexRouter);
 
     // catch 404 and forward to error handler

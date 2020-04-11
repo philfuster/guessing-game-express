@@ -22,6 +22,7 @@ function init(req) {
   const secretNumber = Math.floor(Math.random() * 10 + 1);
   const now = dateformat();
   const id = ObjectID();
+  //
   req.session.secretNumber = secretNumber;
   req.session.newGame = true;
   req.session.timeStamp = now;
@@ -51,12 +52,14 @@ function handleGuess(req, res) {
   const success = parseInt(guess, 10) === secretNumber;
   const high = guess > secretNumber;
   const low = guess < secretNumber;
+  const model = {};
+  //
   log(`Guess submitted: ${guess}`);
   log(`${secretNumber} <> ${guess}`);
-  const model = {};
   model.title = 'Guessing Game';
   if (success) {
     res.end(JSON.stringify({ result: 'success' }));
+    return;
   }
   if (high) {
     model.result = 'too high';
@@ -85,17 +88,19 @@ function handleSuccess(req, res) {
 /*
   === Routes ===
 */
-/* GET index page. */
+/* GET index */
 router.get('/', function (req, res) {
-  log('Serving this shit up boi');
+  log('Serving index');
   res.render('index', { title: 'Guessing Game w/ Express' });
 });
 
-/* GET start page. */
+/* GET start */
 router.get('/start', handleStart);
 
+/* POST guess */
 router.post('/guess', handleGuess);
 
+/* GET success */
 router.get('/success', handleSuccess);
 
 module.exports = router;

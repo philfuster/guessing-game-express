@@ -1,9 +1,10 @@
 @import url('main.css');
-* {
-  box-sizing: border-box;
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
 }
-.content {
-  background-color: white;
-  color: black;
-  font-size: 1.75rem;
+
+p {
+  font-size: 2rem;
 }
