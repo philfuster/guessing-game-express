@@ -11,30 +11,42 @@
     <script src="/javascripts/guessForm.js"></script>
   </head>
   <body>
-    <div class="container">
-      <main class="content">
-        <h1><%= title %></h1>
-        <section id="guess">
-          <h2 class="instructions hidden">
-            The server is thinking of a number between 1 and 10.
-          </h2>
-          <a class="nav-link" id="showInstructions" href="#">Instructions</a>
-          <form id="guess-form">
-            <div class="input">
-              <label for="guess">Your guess</label>
-              <input type="text" name="guess" required />
-              <button id="guess_input" type="button">Guess</button>
-            </div>
-          </form>
-        </section>
-        <ul>
-          <% if(result == 'too high') {%>
-          <li class="highGuess"><%= guess%> <%= result%></li>
-          <%} else{%>
-          <li class="lowGuess"><%= guess%> <%= result%></li>
-          <%}%>
-        </ul>
-      </main>
-    </div>
+    <header></header>
+    <main role="main">
+      <div class="titlebar-container">
+        <div class="titlebar">
+          <h1 class="title"><%= title %></h1>
+        </div>
+      </div>
+      <div class="content-layout">
+        <div id="content" class="text-input">
+          <section id="guess">
+            <h2 class="instructions hidden">
+              The server is thinking of a number between 1 and 10.
+            </h2>
+            <a class="nav-link" id="showInstructions" href="#">Instructions</a>
+            <form id="guess-form">
+              <div class="input">
+                <label for="guess">Your guess</label>
+                <input
+                  type="text"
+                  name="guess"
+                  required
+                  placeholder="Your Guess"
+                />
+                <button id="guess_input" type="button">Guess</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+      <ul>
+        <% if(result == 'too high') {%>
+        <li class="highGuess"><%= guess%> <%= result%></li>
+        <%} else{%>
+        <li class="lowGuess"><%= guess%> <%= result%></li>
+        <%}%>
+      </ul>
+    </main>
   </body>
 </html>

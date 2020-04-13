@@ -5,23 +5,83 @@
     <link rel="stylesheet" href="/stylesheets/index.css" />
   </head>
   <body>
-    <div class="container">
-      <main class="content">
-        <h1 class="title">Welcome to <%= title %></h1>
-        <p class="text-area">
-          This iteration of Guessing Game focuses on the Express framework.
-          Specifically focusing on routing. Another focus is responsive design
-          with CSS Thank you for checking out my project! If you have critiques
-          please let me know!
-          <br />
-          Cheers,
-          <br />
-          Philip
-        </p>
-        <nav>
-          <a class="nav-link" href="/start">Ready to begin?</a>
-        </nav>
-      </main>
-    </div>
+    <header></header>
+    <main role="main">
+      <div class="titlebar-container">
+        <div class="titlebar">
+          <h1 class="title">Welcome to <%= title%></h1>
+        </div>
+      </div>
+      <div class="content-layout">
+        <div id="content" class="introduction text-content">
+          <h2>
+            This iteration of the Guessing Game focuses on the Javascript
+            Framework Express and UI/UX
+          </h2>
+          <!-- Express -->
+          <h3>
+            Express
+          </h3>
+          <p>
+            Express is a Javascript Framework that provides a robust set of
+            features for web and mobile applications.
+          </p>
+          <p>
+            This iteration of Guessing Game will focus on the routing
+            capabalities given by Express.
+          </p>
+          <!-- UI/UX -->
+          <h3>
+            UI/UX
+          </h3>
+          <p>
+            I have been studying UI/UX lately in an attempt to increase my
+            design and presentation skills.
+          </p>
+          <p>
+            UI/UX is an important part of a Web Developers tool kit.
+            <br />
+            The following is more in depth information on how I am addressing
+            UI/UX this iteration of Guessing Game:
+          </p>
+          <!-- Color Palette -->
+          <h4>
+            Color Palette
+          </h4>
+          <p>
+            Color can have a profound affect on a user's experience and evoke
+            emotion.
+          </p>
+          <p>
+            I want skills to range across aspects of web development. Maybe not
+            an expert but capable to the point where I can fit into any team
+            doing what ever is necessary to further the task at hand.
+          </p>
+          <!-- Mobile First Development -->
+          <h4>
+            Mobile First Development
+          </h4>
+          <p>
+            The Mobile first approach is a tenet of
+            <strong>Progressive Enhancement</strong>
+            where instead of focusing on building the website for the most
+            advanced / capable browsers like in Graceful Degredation, the focus
+            is on building out from the content.
+          </p>
+          <p>
+            Websites were built to display content, and mobile first development
+            focuses on a great experience for all users across devices, screen
+            sizes, and resolutions.
+          </p>
+          <p>
+            Three technical ingredients for responsive web design are fluid
+            grids, flexible images, and media queries.
+          </p>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-link" href="/start">Ready to begin?</a>
+      </nav>
+    </main>
   </body>
 </html>

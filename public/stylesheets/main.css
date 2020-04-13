@@ -1,70 +1,199 @@
+/* Color Theme Swatches in HSLA */
+.MIUI-11-Always-On-Display-1-hsla {
+  color: hsla(219, 46%, 53%, 1);
+}
+.MIUI-11-Always-On-Display-2-hsla {
+  color: hsla(196, 72%, 43%, 1);
+}
+.MIUI-11-Always-On-Display-3-hsla {
+  color: hsla(146, 33%, 62%, 1);
+}
+.MIUI-11-Always-On-Display-4-hsla {
+  color: hsla(0, 41%, 57%, 1);
+}
+.MIUI-11-Always-On-Display-5-hsla {
+  color: hsla(0, 0%, 5%, 1);
+}
+
+a,
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
 body,
-html {
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
   margin: 0;
-  letter-spacing: -0.00278rem;
-  font-size: 1rem;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  background-color: hsla(0, 0%, 5%, 1);
+}
+body {
   font-family: Arial, x-locale-body, sans-serif;
-  height: 100%;
-  width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.7;
 }
 
-.container {
-  background-color: cadetblue;
-  height: 100%;
+header {
+  display: grid;
+  margin: 0 16px;
+  align-items: center;
+  border-bottom: 3px solid hsla(0, 0%, 20%, 1);
 }
 
-.title {
-  color: white;
-  font-size: 5rem;
-}
-
-.bg {
-  /* Full height */
-  height: 100%;
-}
-
-.content {
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  height: 100%;
+.titlebar-container {
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 60px;
+}
+.titlebar-container .title {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+  align-items: center;
+  width: 100%;
+  max-width: 1352px;
+  font-weight: 700;
+  hyphens: auto;
+  color: hsla(219, 46%, 53%, 1);
+}
+.content-layout {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1400px;
+  grid-template-columns: 100%;
+  grid-template-areas: 'main';
 }
 
-form {
-  padding: 1rem;
+#content {
+  color: hsla(146, 33%, 62%, 1);
 }
-label {
+
+.introduction {
+  grid-area: main;
+  padding: 15px 12px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.text-content p {
+  box-sizing: border-box;
+  max-width: 100vw;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-size: 3rem;
   font-weight: 800;
-  display: block;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: hsla(196, 72%, 43%, 1);
+}
+
+h3 {
+  font-size: 2.25rem;
+  color: hsla(0, 41%, 57%, 1);
+}
+
+h4 {
   font-size: 2rem;
+  padding-left: 10px;
+  color: hsla(0, 41%, 57%, 1);
 }
 
 .nav-link,
 button {
-  display: block;
   border-radius: 10px;
-  padding: 1.5rem 2rem;
-  position: relative;
-  top: 0;
-  background-color: turquoise;
+  padding: 1.5rem;
+  background-color: hsla(196, 72%, 43%, 1);
   font-weight: 800;
-  font-size: 1.5rem;
-  color: palevioletred;
+  color: hsla(0, 41%, 57%, 1);
   text-decoration: none;
 }
 button,
 input {
-  padding: 0.75rem 1.5rem;
+  padding: 1.75rem 1.5rem;
   font-size: 1.25rem;
 }
 .nav-link:hover,
 button:hover {
-  background-color: palevioletred;
-  color: turquoise;
+  background-color: hsla(0, 41%, 57%, 1);
+  color: hsla(196, 72%, 43%, 1);
   cursor: pointer;
 }
 
