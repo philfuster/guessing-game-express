@@ -99,12 +99,48 @@ body {
   font-size: 1.125rem;
   line-height: 1.7;
 }
-
-header {
+.page-header {
   display: grid;
-  margin: 0 16px;
+  margin: 16px 16px;
   align-items: center;
-  border-bottom: 3px solid hsla(0, 0%, 20%, 1);
+  grid-template-columns: 1fr;
+}
+#main-navigation {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: flex-end;
+}
+#main-navigation label {
+  display: inline-block;
+  color: #fff;
+  font-style: normal;
+  font-size: 1.5rem;
+  padding: 20px;
+  width: min-content;
+  justify-self: flex-end;
+  border: 3px solid #fff;
+}
+#main-navigation ul {
+  list-style-type: none;
+  display: none;
+}
+
+#main-navigation input[type='checkbox'] {
+  opacity: 0;
+}
+
+#main-navigation input:checked ~ ul {
+  display: block;
+}
+#main-navigation ul li {
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+  border-top: 1px solid #333;
+}
+
+#main-navigation ul li a {
+  text-decoration: none;
 }
 
 .titlebar-container {
@@ -180,42 +216,36 @@ h4 {
 button {
   border-radius: 10px;
   padding: 1.5rem;
-  background-color: hsla(196, 72%, 43%, 1);
+  background-color: hsla(196, 72%, 35%, 1);
   font-weight: 800;
-  color: hsla(0, 41%, 57%, 1);
+  color: hsla(10, 90.2%, 45.8%, 1);
   text-decoration: none;
 }
 button,
 input {
   padding: 1.75rem 1.5rem;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 .nav-link:hover,
 button:hover {
-  background-color: hsla(0, 41%, 57%, 1);
-  color: hsla(196, 72%, 43%, 1);
+  background-color: hsla(10, 90.2%, 45.8%, 1);
+  color: hsla(196, 72%, 35%, 1);
   cursor: pointer;
 }
 
-ul {
-  max-width: 500px;
-  padding-left: 0;
-}
-
-li {
-  padding: 0.5em;
+#guess-display li {
+  padding: 1em;
   text-align: center;
   list-style-type: none;
   border-style: solid;
-  border-width: 4px;
+  border-width: 6px;
   border-radius: 15px;
   width: 300px;
   margin-bottom: 0.5em;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
-nav {
-  display: flex;
-  justify-content: center;
-}
+
 .hidden {
   display: none;
 }

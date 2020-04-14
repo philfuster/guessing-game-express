@@ -23,16 +23,23 @@ $(document).ready(function () {
       const result = await response.json();
       const li = $('<li/>');
       if (result.result === 'success') {
-        window.location.replace('/success');
+        alert('success returned from server attempting redirect...');
+        window.location.replace(
+          `${window.location.protocol}//${window.location.host}/success`
+        );
       } else if (result.result === 'too high') {
-        li.addClass('highGuess').text(`${guess} too high`).appendTo('ul');
+        li.addClass('highGuess')
+          .text(`${guess} is too high`)
+          .appendTo('#guess-display');
       } else if (result.result === 'too low') {
-        li.addClass('lowGuess').text(`${guess} too low`).appendTo('ul');
+        li.addClass('lowGuess')
+          .text(`${guess} is too low`)
+          .appendTo('#guess-display');
       }
-      const ul = $('ul');
+      const ul = $('#guess-display');
       ul[0].scrollTop = ul[0].scrollHeight;
     } catch (error) {
-      console.log(error.stack);
+      console.log(error);
     }
   }
   /**

@@ -33,19 +33,18 @@ input {
   align-self: center;
 }
 .highGuess {
-  background-color: #a64d4d;
-  border-color: #8d1919;
+  background-color: hsla(0, 41%, 57%, 1);
+  border-color: hsla(6, 82.2%, 42%, 1);
 }
 .lowGuess {
-  background-color: #8099e6;
-  border-color: #335cd6;
+  background-color: hsla(219, 46%, 53%, 1);
+  border-color: hsla(245, 80%, 53%, 1);
 }
 
 ul {
-  min-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: auto;
-  max-height: 100%;
+  align-items: stretch;
+  justify-content: stretch;
+  margin-top: 20px;
 }

@@ -82,7 +82,7 @@ function handleGuess(req, res) {
  * Handle Success
  */
 function handleSuccess(req, res) {
-  res.render('success', JSON.stringify({ title: 'fucking sucess yesss' }));
+  res.render('success', { title: 'Guess Game w/ Express' });
 }
 
 /*

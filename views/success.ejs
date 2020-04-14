@@ -2,14 +2,38 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/guess.css" />
+    <link rel="stylesheet" href="/stylesheets/success.css" />
   </head>
   <body>
-    <div class="bg"></div>
-    <div class="content bg-text">
-      <h1>Welcome to <%= title %></h1>
-      <h2>Congratulations! You won <3</h2>
-      <a class="nav-link" href="/start">Ready to begin?</a>
-    </div>
+    <header class="page-header">
+      <nav id="main-navigation" role="navigation">
+        <!-- Hamburber Menu -->
+        <label for="hamburger">&#9776</label>
+        <input type="checkbox" id="hamburger">
+        <ul>
+          <li>
+            <a class="nav-link" href="/start">Play again?</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/history">History</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/history">History</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <div class="titlebar-container">
+        <div class="titlebar">
+          <h1 class="title">Welcome to <%= title%></h1>
+        </div>
+      </div>
+      <div class="content-layout">
+        <div class="content">
+          <h2>Congratulations! You won</h2>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
