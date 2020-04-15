@@ -5,10 +5,39 @@
   margin: 0;
 } */
 
-h2 {
-  /* font-size: 3rem; */
+#section-nav {
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
-p {
-  /* font-size: 2rem; */
+#section-nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#section-nav ul li {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--red);
+  padding: 10px 0;
+  text-align: center;
+}
+.section-selected {
+  background-color: var(--light-blue);
+  border-radius: 20px;
+}
+h2 {
+  font-size: 3.5rem;
+}
+#start-link {
+  text-decoration: none;
+  color: var(--green);
+  font-weight: 700;
+  text-align: center;
+  justify-self: center;
+  font-size: 2.5rem;
+  padding: 10px;
+  background-color: #8d8c8c;
+  border-radius: 20px;
+  width: 100%;
 }

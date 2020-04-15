@@ -23,7 +23,6 @@ $(document).ready(function () {
       const result = await response.json();
       const li = $('<li/>');
       if (result.result === 'success') {
-        alert('success returned from server attempting redirect...');
         window.location.replace(
           `${window.location.protocol}//${window.location.host}/success`
         );

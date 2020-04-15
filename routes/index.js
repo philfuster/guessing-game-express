@@ -10,6 +10,9 @@ const dateformat = require('dateformat');
 
 const { ObjectID } = require('mongodb');
 
+const appdata = require('../public/javascripts/app-data');
+
+const { views, routes, title } = appdata;
 /*
   === Function Defitions ===
 */
@@ -38,7 +41,7 @@ function init(req) {
 function handleStart(req, res) {
   log('Start being Handled...');
   init(req);
-  res.render('start', { title: 'Guessing Game' });
+  res.render(views.start, { title });
 }
 /**
  * Handle Guess POST Request
@@ -72,7 +75,7 @@ function handleGuess(req, res) {
   // New Game. Create DB record.
   if (req.session.newGame) {
     req.session.newGame = false;
-    res.render('guessForm', model);
+    res.render(views.guessForm, model);
   } else {
     res.end(JSON.stringify({ result: model.result }));
   }
@@ -82,7 +85,7 @@ function handleGuess(req, res) {
  * Handle Success
  */
 function handleSuccess(req, res) {
-  res.render('success', { title: 'Guess Game w/ Express' });
+  res.render(views.success, { title });
 }
 
 /*
@@ -91,16 +94,16 @@ function handleSuccess(req, res) {
 /* GET index */
 router.get('/', function (req, res) {
   log('Serving index');
-  res.render('index', { title: 'Guessing Game w/ Express' });
+  res.render(views.index, { title });
 });
 
 /* GET start */
-router.get('/start', handleStart);
+router.get(routes.start, handleStart);
 
 /* POST guess */
-router.post('/guess', handleGuess);
+router.post(routes.guess, handleGuess);
 
 /* GET success */
-router.get('/success', handleSuccess);
+router.get(routes.success, handleSuccess);
 
 module.exports = router;
