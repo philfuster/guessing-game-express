@@ -4,11 +4,13 @@ const router = express.Router();
 
 const debug = require('debug');
 
-const log = debug('guess:index');
+const log = debug('guess:routes');
 
 const dateformat = require('dateformat');
 
 const { ObjectID } = require('mongodb');
+
+const url = require('url');
 
 const appdata = require('../public/javascripts/app-data');
 
@@ -16,7 +18,6 @@ const { views, routes, title } = appdata;
 /*
   === Function Defitions ===
 */
-
 /**
  * Initialize Guessing Game.
  * @param {Request} req - Request object
@@ -32,7 +33,6 @@ function init(req) {
   req.session.id = id;
   log(`Number Generated: ${secretNumber}`);
 }
-
 /**
  * Handle Start GET Request
  * @param {Request Object} req - Request Object
@@ -59,8 +59,18 @@ function handleGuess(req, res) {
   //
   log(`Guess submitted: ${guess}`);
   log(`${secretNumber} <> ${guess}`);
-  model.title = 'Guessing Game';
+  model.title = title;
   if (success) {
+    const urlParts = url.parse(req.headers.referer);
+    const pathName = urlParts.pathname;
+    const redirectPath = urlParts.href.replace('start', 'success');
+    // When request is coming from start, redirect to success
+    if (pathName === '/start') {
+      res.redirect(302, redirectPath);
+      res.end();
+    }
+    // Request not coming from start. Send success back to client and have client
+    // side redirect to success.
     res.end(JSON.stringify({ result: 'success' }));
     return;
   }

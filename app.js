@@ -24,7 +24,7 @@ const sess = {
 // Binding debug's output to the console.
 // Initializing Loggers
 debug.log = console.log.bind(console);
-const log = debug('guess:log');
+const log = debug('guess:app');
 const error = debug('guess: error');
 // Router declaration
 const indexRouter = require('./routes/index.js');

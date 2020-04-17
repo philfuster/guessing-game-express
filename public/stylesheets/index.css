@@ -10,7 +10,8 @@
   grid-template-rows: 1fr auto;
 }
 
-#section-nav ul {
+#section-nav ul,
+#page-nav ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -29,7 +30,7 @@
 h2 {
   font-size: 3.5rem;
 }
-#start-link {
+.links a {
   text-decoration: none;
   color: var(--green);
   font-weight: 700;

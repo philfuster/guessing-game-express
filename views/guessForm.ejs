@@ -11,7 +11,18 @@
     <script src="/javascripts/guessForm.js"></script>
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav id="main-navigation" role="navigation">
+        <!-- Hamburber Menu -->
+        <label for="hamburger">&#9776</label>
+        <input type="checkbox" id="hamburger">
+        <ul>
+          <li>
+            <a class="nav-link" href="/history">History</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <main role="main">
       <div class="titlebar-container">
         <div class="titlebar">
@@ -35,22 +46,21 @@
                   type="text"
                   name="guess"
                   autocomplete="off"
-                  required
                   placeholder="Your Guess"
                 />
-                <button id="guess_input" type="submit">Guess</button>
+                <button id="guess_input" type="button">Guess</button>
               </div>
             </form>
           </section>
         </div>
+        <ul id="guess-display">
+          <% if(result == 'too high') {%>
+          <li class="highGuess"><%= guess%> is <%= result%></li>
+          <%} else{%>
+          <li class="lowGuess"><%= guess%> is <%= result%></li>
+          <%}%>
+        </ul>
       </div>
-      <ul id="guess-display">
-        <% if(result == 'too high') {%>
-        <li class="highGuess"><%= guess%> is <%= result%></li>
-        <%} else{%>
-        <li class="lowGuess"><%= guess%> is <%= result%></li>
-        <%}%>
-      </ul>
     </main>
   </body>
 </html>

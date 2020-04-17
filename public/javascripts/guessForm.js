@@ -23,6 +23,7 @@ $(document).ready(function () {
       const result = await response.json();
       const li = $('<li/>');
       if (result.result === 'success') {
+        console.log('guess was sucess');
         window.location.replace(
           `${window.location.protocol}//${window.location.host}/success`
         );
@@ -51,6 +52,14 @@ $(document).ready(function () {
   /*
     === Main Logic ===
   */
+  $('form').on('keypress', function (e) {
+    if (e.which === 13) {
+      e.preventDefault();
+      $('#guess_input').click();
+      return false;
+    }
+    return true;
+  });
   $('#guess_input').on('click', guessInputHandler);
   $('#showInstructions').on('click', toggleInstructions);
   $('.instructions').on('click', toggleInstructions);

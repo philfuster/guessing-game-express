@@ -19,7 +19,7 @@ button {
   grid-row: 1;
   border-radius: 10px;
 }
-input {
+.input-layout input {
   background-color: hsla(146, 33%, 62%, 1);
   border-radius: 10px;
 }
@@ -39,12 +39,4 @@ input {
 .lowGuess {
   background-color: hsla(219, 46%, 53%, 1);
   border-color: hsla(245, 80%, 53%, 1);
-}
-
-ul {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: stretch;
-  margin-top: 20px;
 }
