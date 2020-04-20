@@ -32,6 +32,16 @@ button {
   color: black;
   align-self: center;
 }
+
+#showInstructions {
+  background-color: var(--black);
+  color: #fff;
+  border-bottom: 3px hsla(0, 0%, 20%, 1) solid;
+  border-top: 3px hsla(0, 0%, 20%, 1) solid;
+  padding: 20px;
+  text-align: center;
+  font-size: 2em;
+}
 .highGuess {
   background-color: hsla(0, 41%, 57%, 1);
   border-color: hsla(6, 82.2%, 42%, 1);

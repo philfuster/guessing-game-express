@@ -6,34 +6,35 @@
   </head>
   <body>
     <header>
-      <nav id="main-navigation" role="navigation">
+    </header>
+    <main class="l-grid" role="main">
+      <div class="title">
+        <h1><%= title%></h1>
+      </div>
+      <nav class="nav nav--main l-grid" role="navigation">
         <!-- Hamburber Menu -->
-        <label for="hamburger">&#9776</label>
+        <label for="hamburger" class="nav__label">&#9776</label>
         <input type="checkbox" id="hamburger">
-        <ul>
+        <!-- List of nav links -->
+        <ul class="nav__ul">
           <li>
-            <a class="nav-link" href="/start">Play again?</a>
+            <a class="nav-link" href="/start">Ready to begin?</a>
           </li>
           <li>
             <a class="nav-link" href="/history">History</a>
           </li>
-          <li>
-            <a class="nav-link" href="/">Index</a>
-          </li>
         </ul>
       </nav>
-    </header>
-    <main role="main">
-      <div class="titlebar-container">
-        <div class="titlebar">
-          <h1 class="title"><%= title%></h1>
-        </div>
-      </div>
       <div class="content-layout">
         <div class="content">
           <h2>Congratulations! You won</h2>
         </div>
       </div>
     </main>
+    <footer>
+      <nav class="nav nav--footer l-grid">
+        <a href="/start">Play Again?</a>
+      </div>
+    </footer>
   </body>
 </html>

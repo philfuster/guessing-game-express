@@ -12,7 +12,12 @@
   </head>
   <body>
     <header>
-      <nav class="nav" role="navigation">
+    </header>
+    <main class="l-grid" role="main">
+      <div class="title">
+        <h1><%= title%></h1>
+      </div>
+      <nav class="nav nav--main l-grid" role="navigation">
         <!-- Hamburber Menu -->
         <label for="hamburger" class="nav__label">&#9776</label>
         <input type="checkbox" id="hamburger">
@@ -26,19 +31,8 @@
           </li>
         </ul>
       </nav>
-    </header>
-    <main role="main">
-      <div class="title">
-        <h1><%= title%></h1>
-      </div>
       <div class="content-layout">
         <div id="content" class="introduction text-content">
-          <div id="page-nav">
-            <ul class="links">
-              <a href="/start">Ready to begin?</a>
-              <a href="/history">History</a>
-            </ul>
-          </div>
           <h2>
             Key Enhancements
           </h2>
@@ -111,8 +105,14 @@
               grids, flexible images, and media queries.
             </p>
           </section>
+
         </div>
       </div>
     </main>
+    <footer>
+      <nav class="nav nav--footer l-grid">
+        <a href="/start">Ready?</a>
+      </div>
+    </footer>
   </body>
 </html>

@@ -116,28 +116,55 @@ ul {
 }
 
 /*
+  === Layout Styles ===
+*/
+.l-grid {
+  display: grid;
+  grid-gap: 20px;
+}
+
+/*
   === nav module styles ===
 */
 .nav {
-  background-color: hsla(0, 0%, 60%, 1);
-  box-shadow: 0 2px 5px 0 rgba(44, 44, 44, 0.16),
-    0 2px 10px 0 rgba(51, 51, 51, 0.12);
   font-size: 1.2rem;
 }
 
+.nav--main {
+  background-color: var(--black);
+  box-shadow: 0 0 5px 0 rgb(246, 246, 246);
+}
+
+.nav--footer {
+  background-color: transparent;
+  color: #fff;
+  justify-content: center;
+}
+
+.nav--footer > a {
+  border: 3px solid #fff;
+  padding: 30px 120px;
+  text-decoration: none;
+  box-shadow: inset 0 0 10px #fff;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 800;
+  text-align: center;
+}
+
 .nav__label {
-  display: inline-block;
-  color: var(--black);
+  display: block;
+  color: #fff;
   font-style: normal;
   font-size: 2em;
   padding: 10px 20px;
-  justify-self: flex-start;
+  justify-self: stretch;
+  text-align: end;
 }
 
 .nav__ul {
   display: none;
   text-align: center;
-  border-top: 3px hsla(0, 0%, 20%, 1) solid;
   background-color: var(--black);
   font-size: 1.75em;
 }
@@ -150,11 +177,19 @@ ul {
   display: block;
 }
 
-.nav__ul > li,
-.nav__ul > li > a {
+.nav__ul > li {
   display: block;
   box-sizing: border-box;
   border-bottom: 3px hsla(0, 0%, 20%, 1) solid;
+  padding: 20px;
+}
+
+.nav__ul > li:first-child {
+  border-top: 3px hsla(0, 0%, 20%, 1) solid;
+}
+
+.nav__ul > li > a {
+  display: block;
   text-decoration: none;
 }
 /* 

@@ -12,7 +12,12 @@
   </head>
   <body>
     <header>
-      <nav class="nav" role="navigation">
+    </header>
+    <main class="l-grid" role="main">
+      <div class="title">
+        <h1><%= title %></h1>
+      </div>
+      <nav class="nav nav--main l-grid" role="navigation">
         <!-- Hamburber Menu -->
         <label for="hamburger" class="nav__label">&#9776</label>
         <input type="checkbox" id="hamburger">
@@ -26,11 +31,6 @@
           </li>
         </ul>
       </nav>
-    </header>
-    <main role="main">
-      <div class="title">
-        <h1><%= title %></h1>
-      </div>
       <div class="content-layout">
         <div id="content" class="text-content">
           <section id="start">

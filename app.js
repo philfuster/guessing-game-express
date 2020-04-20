@@ -8,9 +8,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const debug = require('debug');
-// Mongo Client
-const { MongoClient } = require('mongodb');
-const assert = require('assert');
+// DB Module
+const { initDb } = require('./public/javascripts/db');
 /*
   === Local Variables ===
 */
@@ -28,17 +27,7 @@ const log = debug('guess:app');
 const error = debug('guess: error');
 // Router declaration
 const indexRouter = require('./routes/index.js');
-// Database Connection Variables
-// Connection URL
-const dbUrl =
-  'mongodb+srv://paf:test@guessinggame-2plqp.mongodb.net/test?retryWrites=true&w=majority';
-// Database name
-const dbName = 'GuessingGame';
-// Create new MongoClient
-const client = new MongoClient(dbUrl, { useUnifiedTopology: true });
 
-let db;
-let gamesCol;
 /*
   === Function Definitions ===
 */
@@ -57,10 +46,8 @@ const app = express();
 */
 (async function () {
   try {
-    await client.connect();
-    log('Connected to MongoDB Atlas correctly');
-    db = client.db(dbName);
-    gamesCol = db.collection('games');
+    await initDb();
+    log('PAF Guessing Game application connected to db.');
     log('PAF Guessing Game Application started...');
     // view engine setup
     app.set('views', path.join(__dirname, '/views'));
