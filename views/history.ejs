@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/guess.css" />
+    <link rel="stylesheet" href="/stylesheets/history.css" />
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -32,7 +32,7 @@
         </ul>
       </nav>
       <div class="content-layout">
-        <div id="content" class="text-content">
+        <div id="content" class="text-content l-grid">
           <table id="history_table" >
             <caption>PAF Guessing Game History</caption>
             <thead>
@@ -42,32 +42,35 @@
             </thead>
             <%history.forEach((game, i)=>{ %>
                 <tr class="table-row" data-objectid="<%=game._id%>">
-                    <td id="<%=i%>"><%=game.time_stamp%></td>
-                    <td><%=game.secret_number%></td>
+                    <td id="<%=i%>"><%=game.timeStamp%></td>
+                    <td><%=game.secretNumber%></td>
                     <td><%=game.guesses.length%></td>
                 </tr>
             <%});%>
           </table>
           <section id="game_detail" class="hidden">
-            <h1 id="date"></h1>
-            <div id="secret-and-guess">
-                <div class="text-box" id="secret_number">
-                    <h2>Secret Number</h2>
-                    <h3 id="secret"></h3>
-                </div>
-                <div class="text-box">
-                    <h2># of Guesses</h2>
-                    <h3 id="num_guesses"></h3>
-                </div>
-            </div>
-            <div id="guesses">
-                <h1>Guesses</h1>
-                <ul>
-
-                </ul>
+            <div class="gameDetailContent l-grid">
+              <h2> Guessing Game Detail </h2>
+              <p id="date"></p>
+              <div id="secret-and-guess">
+                  <div class="text-box" id="secret_number">
+                      <h3>Secret Number</h3>
+                      <p id="secret"></p>
+                  </div>
+                  <div class="text-box">
+                      <h3># of Guesses</h3>
+                      <p id="num_guesses"></p>
+                  </div>
+              </div>
+              <div id="guesses-layout">
+                  <h3>Guesses</h3>
+                  <ul id="guesses">
+  
+                  </ul>
+              </div>
             </div>
           </section>
-        <nav>
+        <nav class="nav nav--footer l-grid">
             <a class="nav-link" href="/start">Play</a>
             <a id="history" class="nav-link hidden">History</a>
         </nav>

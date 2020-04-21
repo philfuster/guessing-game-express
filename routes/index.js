@@ -107,7 +107,7 @@ async function handleGuess(req, res) {
   }
   // perform update
   try {
-    const r = await gamesCol.updateOne(filter, update, { upsert: true });
+    await gamesCol.updateOne(filter, update, { upsert: true });
   } catch (err) {
     console.log(err.stack);
   }
@@ -139,10 +139,33 @@ function handleSuccess(req, res) {
 async function handleHistory(req, res) {
   const db = getDb();
   const gamesCol = db.collection('games');
-  const games = await gamesCol.find({
-    complete: { $eq: true },
-  });
-  res.render(views.history, {});
+  const games = await gamesCol
+    .find({
+      complete: { $eq: true },
+    })
+    .toArray();
+  res.render(views.history, { history: games, title });
+}
+
+/**
+ * Handle detail
+ */
+async function handleDetail(req, res) {
+  const db = getDb();
+  const gamesCol = db.collection('games');
+  //
+  const uri = url.parse(req.url, true);
+  const { gameid } = uri.query;
+  try {
+    const response = await gamesCol.findOne({
+      _id: gameid,
+    });
+    const game = response;
+    log('game');
+    res.end(JSON.stringify(game));
+  } catch (err) {
+    console.log(err);
+  }
 }
 /*
   === Routes ===
@@ -158,6 +181,12 @@ router.get(routes.start, handleStart);
 
 /* POST guess */
 router.post(routes.guess, handleGuess);
+
+/* GET history */
+router.get(routes.history, handleHistory);
+
+/* GET detail */
+router.get(routes.detail, handleDetail);
 
 /* GET success */
 router.get(routes.success, handleSuccess);
