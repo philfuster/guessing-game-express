@@ -38,6 +38,7 @@ function init(req) {
 }
 /**
  * Handle Start GET Request
+ *
  * @param {Request Object} req - Request Object
  * @param {Response Object} res - Response Object
  */
@@ -48,6 +49,7 @@ function handleStart(req, res) {
 }
 /**
  * Handle Guess POST Request
+ *
  * @param {Request} req - Request object
  * @param {Response} res - Response object
  */
@@ -161,7 +163,6 @@ async function handleDetail(req, res) {
       _id: gameid,
     });
     const game = response;
-    log('game');
     res.end(JSON.stringify(game));
   } catch (err) {
     console.log(err);

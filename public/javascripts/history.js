@@ -44,7 +44,6 @@ $(document).ready(function () {
         console.error(error.stack);
       }
     }
-    console.log('here');
   });
   $('#history').on('click', showHistory).hide();
 });

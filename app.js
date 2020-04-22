@@ -1,6 +1,3 @@
-/*
-  === Requires ===
-*/
 const createError = require('http-errors');
 const express = require('express');
 const session = require('express-session');
@@ -47,7 +44,6 @@ const app = express();
 (async function () {
   try {
     await initDb();
-    log('PAF Guessing Game application connected to db.');
     log('PAF Guessing Game Application started...');
     // view engine setup
     app.set('views', path.join(__dirname, '/views'));

@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const { MongoClient, ObjectID } = require('mongodb');
+const { MongoClient } = require('mongodb');
 
 const debug = require('debug');
 
