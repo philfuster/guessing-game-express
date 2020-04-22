@@ -107,8 +107,6 @@ html {
 }
 body {
   font-family: Arial, x-locale-body, sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.7;
 }
 
 ul {
@@ -165,7 +163,7 @@ ul {
   display: none;
   text-align: center;
   background-color: var(--black);
-  font-size: 1.75em;
+  font-size: 1.3em;
 }
 
 .nav > input[type='checkbox'] {
@@ -180,7 +178,7 @@ ul {
   display: block;
   box-sizing: border-box;
   border-bottom: 3px hsla(0, 0%, 20%, 1) solid;
-  padding: 20px;
+  padding: 1rem;
 }
 
 .nav__ul > li:first-child {
@@ -221,7 +219,6 @@ ul {
   grid-area: main;
   padding: 15px 12px;
   box-sizing: border-box;
-  width: 100%;
 }
 
 .text-content p {
@@ -294,18 +291,26 @@ button:hover {
 
 /* === Media Queries === */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37em) {
   .nav__ul {
     display: grid;
-    justify-content: space-evenly;
+    grid-auto-flow: column;
+    grid-gap: 0;
   }
   .nav__label {
     display: none;
   }
   .nav__ul > li,
-  .nav__ul > li:first-child,
-  .nav__ul > li > a {
+  .nav__ul > li:first-child {
     display: inline;
     border: none;
+  }
+
+  .nav__ul > li {
+    border-right: 1px white solid !important;
+  }
+
+  .nav__ul > li > a {
+    display: block;
   }
 }

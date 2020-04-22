@@ -2,7 +2,9 @@
 <html>
   <head>
     <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <link rel="stylesheet" href="/stylesheets/index.css" />
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -23,9 +25,9 @@
         <label for="hamburger" class="nav__label">&#9776</label>
         <input type="checkbox" id="hamburger">
         <!-- List of nav links -->
-        <ul class="nav__ul">
+        <ul class="nav__ul l-grid">
           <li>
-            <a class="nav-link" href="/start">Ready to begin?</a>
+            <a class="nav-link" href="/start">Ready?</a>
           </li>
           <li>
             <a class="nav-link" href="/history">History</a>
@@ -109,11 +111,12 @@
 
         </div>
       </div>
-    </main>
-    <footer>
       <nav class="nav nav--footer l-grid">
         <a href="/start">Ready?</a>
       </div>
+    </main>
+    <footer>
+
     </footer>
   </body>
 </html>
